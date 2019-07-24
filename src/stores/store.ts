@@ -1,5 +1,11 @@
-import Vuex from "vuex";
+import Vue from "Vue";
+import Vuex, { StoreOptions } from "vuex";
+import { RootState } from "./RootState";
 
-export const store = new Vuex.Store({
+const store: StoreOptions<RootState> = {
+    state: {
+        version: "1.0.0"
+    }
+}
 
-});
+export default new Vuex.Store<RootState>(store);
