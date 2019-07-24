@@ -1,6 +1,6 @@
 <template>
-    <div class="page-container">
-        <md-app md-mode="reveal">
+    <div class="fill-page">
+        <md-app md-mode="reveal" class="fill-page">
             <md-app-toolbar class="md-primary">
                 <md-button class="md-icon-button" @click="showSidebar = !showSidebar">
                     <md-icon>menu</md-icon>
@@ -9,15 +9,10 @@
             </md-app-toolbar>
             <md-app-drawer :md-active.sync="showSidebar" v-on:md-closed="$emit('hide-sidebar')">
                 <md-toolbar class="md-transparent" md-elevation="0">Json Type</md-toolbar>
-                <md-list :md-expand-single="true">
-                    <md-list-item md-expand>
+                <md-list>
+                    <md-list-item to="/npcdialogs">
                         <md-icon>people</md-icon>
-                        <span class="md-list-item-text">NPCs</span>
-                        
-                        <md-list slot="md-expand">
-                            <md-list-item class="md-inset">New</md-list-item>
-                            <md-list-item class="md-inset">Load</md-list-item>
-                        </md-list>
+                        <span class="md-list-item-text">NPC Dialogs</span>
                     </md-list-item>
 
                     <md-list-item>
@@ -36,22 +31,8 @@
                     </md-list-item>
                 </md-list>
             </md-app-drawer>
-            <md-app-content>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, non molestias et! Earum magnam, similique, quo recusandae placeat dicta asperiores modi sint ea repudiandae maxime? Quae non explicabo, neque.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, non molestias et! Earum magnam, similique, quo recusandae placeat dicta asperiores modi sint ea repudiandae maxime? Quae non explicabo, neque.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, non molestias et! Earum magnam, similique, quo recusandae placeat dicta asperiores modi sint ea repudiandae maxime? Quae non explicabo, neque.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, non molestias et! Earum magnam, similique, quo recusandae placeat dicta asperiores modi sint ea repudiandae maxime? Quae non explicabo, neque.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, non molestias et! Earum magnam, similique, quo recusandae placeat dicta asperiores modi sint ea repudiandae maxime? Quae non explicabo, neque.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, non molestias et! Earum magnam, similique, quo recusandae placeat dicta asperiores modi sint ea repudiandae maxime? Quae non explicabo, neque.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, non molestias et! Earum magnam, similique, quo recusandae placeat dicta asperiores modi sint ea repudiandae maxime? Quae non explicabo, neque.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, non molestias et! Earum magnam, similique, quo recusandae placeat dicta asperiores modi sint ea repudiandae maxime? Quae non explicabo, neque.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, non molestias et! Earum magnam, similique, quo recusandae placeat dicta asperiores modi sint ea repudiandae maxime? Quae non explicabo, neque.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, non molestias et! Earum magnam, similique, quo recusandae placeat dicta asperiores modi sint ea repudiandae maxime? Quae non explicabo, neque.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, non molestias et! Earum magnam, similique, quo recusandae placeat dicta asperiores modi sint ea repudiandae maxime? Quae non explicabo, neque.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, non molestias et! Earum magnam, similique, quo recusandae placeat dicta asperiores modi sint ea repudiandae maxime? Quae non explicabo, neque.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, non molestias et! Earum magnam, similique, quo recusandae placeat dicta asperiores modi sint ea repudiandae maxime? Quae non explicabo, neque.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, non molestias et! Earum magnam, similique, quo recusandae placeat dicta asperiores modi sint ea repudiandae maxime? Quae non explicabo, neque.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, non molestias et! Earum magnam, similique, quo recusandae placeat dicta asperiores modi sint ea repudiandae maxime? Quae non explicabo, neque.</p>
+            <md-app-content class="fill-page">
+                <router-view />
             </md-app-content>
         </md-app>
     </div>
@@ -83,3 +64,9 @@
         private showSidebar:boolean = false;
     }
 </script>
+
+<style lang="scss" scoped>
+    .fill-page {
+        height: 100%;
+    }
+</style>

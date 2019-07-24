@@ -27,7 +27,7 @@ require("./initVueMaterial");
 (window as any).joint = require("jointjs");
 
 const routes = [
-    { path: "/npcs", component: NPC }
+    { path: "/npcdialogs", component: NPC }
 ];
 
 const router = new VueRouter({
