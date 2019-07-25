@@ -11,10 +11,10 @@
                     <md-tooltip md-direction="right">New</md-tooltip>
                 </md-button>
 
-                <md-button class="md-icon-button" :click="uploadFile()">
+                <md-button class="md-icon-button" @click="uploadFile()">
                     <md-icon>cloud_upload</md-icon>
                     <md-tooltip md-direction="right">Upload</md-tooltip>
-                    <input ref="fileInput" type="file" accept="*.json" style="display: none" :onchange="loadFile(this)" />
+                    <input ref="fileinput" type="file" accept="*.json" style="display: none" @change="loadFile" />
                 </md-button>
 
                 <md-button class="md-icon-button">
@@ -34,13 +34,14 @@
         components: { }
     })
     export default class NPC extends Vue {
-        loadFile(files:any[]) {
-            console.log(files);
+        loadFile(fileEvent:any) {
+            console.log(fileEvent);
         };
 
         uploadFile() {
-            console.log(this.$refs.fileInput);
-            (this.$refs.fileInput as any).click();
+            if (this.$refs.fileinput) {
+                (this.$refs.fileinput as any).click();
+            }
         }
     }
 </script>
