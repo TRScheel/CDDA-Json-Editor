@@ -83,19 +83,7 @@
                                 </md-card-header>
                                 <md-card-content>
                                     <md-card v-if="!!dialog.speaker_effect.condition">
-                                        <div v-bind:key="conid" v-for="(con, conid) in dialog.speaker_effect.condition">    
-                                            <md-card-header>
-                                                <md-card-header-text>
-                                                    <div class="md-subtitle">
-                                                        <md-icon>flag</md-icon>
-                                                        {{ con[0] }}
-                                                    </div>
-                                                </md-card-header-text>
-                                            </md-card-header>
-                                            <md-card-content>
-                                                {{ con[1] }}
-                                            </md-card-content>
-                                        </div>
+                                        <Condition v-bind:key="conid" v-for="(con, conid) in dialog.speaker_effect.condition" :conditional="con" />                                                
                                     </md-card>
                                 </md-card-content>
                             </md-card>
@@ -119,11 +107,12 @@
     import Component from "vue-class-component";
     import Talk from "../../models/npcs/Talk";
     import SpeakerEffect from "../../models/npcs/SpeakerEffect";
-import ConditionalLine from "../../models/npcs/ConditionalLine";
-import { SimpleConditional, DeclarativeConditional } from "../../models/npcs/Enums";
+    import ConditionalLine from "../../models/npcs/ConditionalLine";
+    import { SimpleConditional, DeclarativeConditional } from "../../models/npcs/Enums";
+    import Condition from "./Condition.vue";
 
     @Component({
-        components: { }
+        components: { Condition }
     })
     export default class NPC extends Vue {
         public dialogs:Talk[] = [ new Talk() ];
