@@ -4,8 +4,8 @@ import { Guid } from "guid-typescript";
 
 export default class SpeakerEffect {
     public sentinel: string | Guid = Guid.create();
-    public condition?: ConditionalLine;
+    public condition?: ConditionalLine = undefined;
     public effect?: MissionEffect | StatEffect | CharacterEffect | TradeEffect | BehaviorEffect |
                     MissionEffect[] | StatEffect[] | CharacterEffect[] | TradeEffect[] | BehaviorEffect[] |
-                    Map<MissionEffect | StatEffect | CharacterEffect | TradeEffect | BehaviorEffect | EffectModifier, string | number | boolean>;
+                    Map<MissionEffect | StatEffect | CharacterEffect | TradeEffect | BehaviorEffect | EffectModifier, string | number | boolean> = undefined;
 }
