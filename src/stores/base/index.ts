@@ -1,16 +1,16 @@
-import { Module } from 'vuex';
-import { RootState, AppState } from '../../states';
-import { state } from './state';
-import { actions } from './actions';
-import { mutations } from './mutations';
-import { getters } from './getters';
+import { Module } from "vuex";
+import { IAppState, IRootState } from "../../states";
+import { actions } from "./actions";
+import { getters } from "./getters";
+import { mutations } from "./mutations";
+import { state } from "./state";
 
 const namespaced: boolean = true;
 
-export const base: Module<AppState, RootState> = {
+export const base: Module<IAppState, IRootState> = {
+    actions,
+    getters,
+    mutations,
     namespaced,
     state,
-    actions,
-    mutations,
-    getters
-}
+};

@@ -1,6 +1,6 @@
 import { ActionTree } from "vuex";
-import { AppState, RootState } from "../../states";
+import { IAppState, IRootState } from "../../states";
 
-export const actions : ActionTree<AppState, RootState> = {
+export const actions: ActionTree<IAppState, IRootState> = {
 
-}
+};

@@ -1,5 +1,5 @@
 import { MutationTree } from "vuex";
-import { AppState } from "../../states";
+import { IAppState } from "../../states";
 
-export const mutations : MutationTree<AppState> = {
-}
+export const mutations: MutationTree<IAppState> = {
+};

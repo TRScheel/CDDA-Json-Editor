@@ -1,6 +1,7 @@
-export interface RootState {
+export interface IRootState {
     version: string;
 }
 
-export interface AppState {
+// tslint:disable-next-line: no-empty-interface
+export interface IAppState {
 }

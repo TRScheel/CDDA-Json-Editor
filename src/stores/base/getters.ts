@@ -1,5 +1,5 @@
 import { GetterTree } from "vuex";
-import { AppState, RootState } from "../../states";
+import { IAppState, IRootState } from "../../states";
 
-export const getters: GetterTree<AppState, RootState> = {
-}
+export const getters: GetterTree<IAppState, IRootState> = {
+};

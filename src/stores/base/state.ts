@@ -1,4 +1,4 @@
-import { AppState } from "../../states";
+import { IAppState } from "../../states";
 
-export const state : AppState = {
-}
+export const state: IAppState = {
+};
