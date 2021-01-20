@@ -6,7 +6,7 @@
     },
     "dependencies": {
         "guid-typescript": "^1.0.9",
-        "jointjs": "^3.0.2",
+        "jointjs": "^3.3.0",
         "lodash": "^4.17.15",
         "vue": "^2.6.10",
         "vue-loader": "^15.7.1",
